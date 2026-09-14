@@ -1,0 +1,98 @@
+---
+const stack = [
+  { name: 'HTML5', label: 'HTML', color: '#e34f26' },
+  { name: 'CSS3', label: 'CSS', color: '#2965f1' },
+  { name: 'JavaScript', label: 'JS', color: '#f0db4f' },
+  { name: 'TypeScript', label: 'TS', color: '#3178c6' },
+  { name: 'PHP', label: 'PHP', color: '#777bb4' },
+  { name: 'Laravel', label: 'Lv', color: '#ff2d20' },
+  { name: 'WordPress', label: 'WP', color: '#8fb2c9' },
+  { name: 'React', label: 'Rx', color: '#61dafb' },
+  { name: 'Next.js', label: 'N', color: '#f5f7fb' },
+  { name: 'Tailwind CSS', label: 'Tw', color: '#38bdf8' },
+  { name: 'MySQL', label: 'Sq', color: '#4479a1' },
+  { name: 'Docker', label: 'Do', color: '#2496ed' },
+  { name: 'Cloudflare', label: 'Cf', color: '#f6821f' },
+  { name: 'GitHub', label: 'Gh', color: '#f5f7fb' },
+  { name: 'OpenAI', label: 'AI', color: '#10a37f' },
+  { name: 'Claude', label: 'Cl', color: '#d97757' }
+];
+---
+
+<section class="tech">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Technologies I Work With</span>
+    </div>
+
+    <ul class="tech-grid">
+      {stack.map((t) => (
+        <li>
+          <span class="tech-icon" style={`--tc:${t.color}`}>{t.label}</span>
+          <span class="tech-name">{t.name}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .tech {
+    background: var(--bg-elevated);
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-block: 1px solid var(--border);
+  }
+
+  .tech .section-head {
+    margin-bottom: 2rem;
+  }
+
+  .tech-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1.1rem;
+  }
+
+  .tech-grid li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tech-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    color: var(--tc);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.78rem;
+  }
+
+  .tech-name {
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .tech-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tech-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

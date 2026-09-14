@@ -1,0 +1,131 @@
+---
+const testimonials = [
+  {
+    quote: 'Jason transformed our website and doubled our online inquiries within the first month. Highly recommend!',
+    name: 'Mark T.',
+    company: 'CAM Construction Group'
+  },
+  {
+    quote: 'Professional, responsive, and delivers results. Our new site is faster, ranks higher, and looks amazing.',
+    name: 'Sarah K.',
+    company: 'Power Core Peptides'
+  },
+  {
+    quote: 'The AI automation Jason built for us has saved countless hours and streamlined our entire process.',
+    name: 'David L.',
+    company: 'Axis Automation'
+  }
+];
+---
+
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What Clients Say</span>
+      <h2>What Clients Say</h2>
+    </div>
+
+    <div class="t-grid">
+      {testimonials.map((t) => (
+        <div class="t-card">
+          <div class="t-top">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="t-quote">{t.quote}</p>
+          <div class="t-person">
+            <span class="avatar">{t.name.charAt(0)}</span>
+            <span>
+              <strong>{t.name}</strong>
+              <small>{t.company}</small>
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background: var(--bg);
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .t-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .t-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+  }
+
+  .t-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .quote-mark {
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    color: var(--blue-light);
+    line-height: 1;
+  }
+
+  .stars {
+    color: var(--star);
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+  }
+
+  .t-quote {
+    margin-top: 1rem;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+  }
+
+  .t-person {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+  }
+
+  .avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gradient);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .t-person span:last-child {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.88rem;
+  }
+
+  .t-person small {
+    color: var(--text-dim);
+    font-size: 0.78rem;
+  }
+
+  @media (max-width: 900px) {
+    .t-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

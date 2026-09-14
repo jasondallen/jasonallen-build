@@ -1,0 +1,125 @@
+---
+const services = [
+  {
+    name: 'Custom Websites',
+    body: 'High-performance websites built for conversions, speed, and search rankings.',
+    icon: 'monitor'
+  },
+  {
+    name: 'AI Integrations',
+    body: 'Chatbots, automation, OpenAI, Claude, and custom AI workflows.',
+    icon: 'chip'
+  },
+  {
+    name: 'Website Performance',
+    body: 'Core Web Vitals, speed optimization, and technical SEO to outrank competitors.',
+    icon: 'rocket'
+  },
+  {
+    name: 'Custom Development',
+    body: 'Web applications, APIs, databases, and custom software solutions.',
+    icon: 'code'
+  }
+];
+
+const icons: Record<string, string> = {
+  monitor: '<path d="M3 4h18v12H3z"/><path d="M8 20h8M12 16v4"/>',
+  chip: '<rect x="7" y="7" width="10" height="10" rx="1"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.5 5.5l2 2M16.5 16.5l2 2M5.5 18.5l2-2M16.5 7.5l2-2"/>',
+  rocket: '<path d="M12 2c2.5 2 4 5 4 9 0 2-1 4-2 5l-2 2-2-2c-1-1-2-3-2-5 0-4 1.5-7 4-9z"/><path d="M9 15l-3 3M15 15l3 3M10 9h.01"/>',
+  code: '<path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/>'
+};
+---
+
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>Solutions that drive growth</h2>
+    </div>
+
+    <div class="services-grid">
+      {services.map((s) => (
+        <div class="service-card">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={icons[s.icon]} />
+          </div>
+          <h3>{s.name}</h3>
+          <p>{s.body}</p>
+          <a href="#contact" class="learn-more">Learn More &rarr;</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background: var(--bg);
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem 1.5rem;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .service-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+  }
+
+  .icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--blue-light);
+    margin-bottom: 1.1rem;
+  }
+
+  .icon-box svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-card p {
+    margin-top: 0.6rem;
+    font-size: 0.92rem;
+  }
+
+  .learn-more {
+    display: inline-block;
+    margin-top: 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--blue-light);
+  }
+
+  @media (max-width: 900px) {
+    .services-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

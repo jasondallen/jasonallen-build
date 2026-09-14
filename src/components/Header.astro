@@ -1,0 +1,107 @@
+---
+const links = [
+  { href: '#top', label: 'Home' },
+  { href: '#services', label: 'Services' },
+  { href: '#portfolio', label: 'Portfolio' },
+  { href: '#about', label: 'About' },
+  { href: '#process', label: 'Process' },
+  { href: '#blog', label: 'Blog' },
+  { href: '#contact', label: 'Contact' }
+];
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="#top" class="logo">
+      <span class="logo-mark">JA</span>
+      <span class="logo-text">
+        JASON ALLEN
+        <small>WEB SOLUTIONS</small>
+      </span>
+    </a>
+
+    <nav aria-label="Primary">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+
+    <a href="#contact" class="btn btn-primary btn-sm header-cta">Get a Quote</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: rgba(10, 14, 26, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 0.85rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-right: auto;
+  }
+
+  .logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--gradient);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.95rem;
+  }
+
+  .logo-text {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+
+  .logo-text small {
+    display: block;
+    font-weight: 600;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--blue-light);
+  }
+
+  nav {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  nav a {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.15s ease;
+  }
+
+  nav a:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 900px) {
+    nav {
+      display: none;
+    }
+  }
+</style>

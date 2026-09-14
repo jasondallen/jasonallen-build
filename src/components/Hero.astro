@@ -1,0 +1,230 @@
+---
+---
+
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="lineGrad" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#3b82f6" stop-opacity="0.05" />
+          <stop offset="0.5" stop-color="#3b82f6" stop-opacity="0.55" />
+          <stop offset="1" stop-color="#8b5cf6" stop-opacity="0.65" />
+        </linearGradient>
+        <linearGradient id="lineGrad2" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.03" />
+          <stop offset="0.6" stop-color="#60a5fa" stop-opacity="0.35" />
+          <stop offset="1" stop-color="#8b5cf6" stop-opacity="0.5" />
+        </linearGradient>
+      </defs>
+      <path d="M 100 620 C 350 560, 550 520, 700 420 S 980 220, 1160 110" fill="none" stroke="url(#lineGrad)" stroke-width="2" />
+      <path d="M 60 520 C 320 500, 520 460, 680 360 S 960 160, 1180 70" fill="none" stroke="url(#lineGrad2)" stroke-width="1.5" />
+      <path d="M 180 660 C 400 610, 600 560, 760 470 S 1020 260, 1170 170" fill="none" stroke="url(#lineGrad)" stroke-width="1" opacity="0.6" />
+      <g class="pulse-dots" fill="#60a5fa">
+        <circle cx="700" cy="420" r="4" />
+        <circle cx="980" cy="220" r="3" />
+        <circle cx="360" cy="560" r="3" />
+        <circle cx="1160" cy="110" r="5" />
+        <circle cx="520" cy="460" r="2.5" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="badge"><span class="dot"></span>Available for new projects</span>
+      <h1>
+        Building websites<br />
+        that <span class="grad">grow businesses.</span>
+      </h1>
+      <p class="lede">
+        Modern web development, AI integrations, SEO, and custom software
+        solutions designed to deliver real results.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Start a Project &rarr;</a>
+        <a href="#portfolio" class="btn btn-outline">View My Work &rarr;</a>
+      </div>
+      <div class="hero-trust">
+        <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        Trusted by businesses nationwide
+      </div>
+    </div>
+
+    <div class="hero-code" aria-hidden="true">
+      <div class="code-card code-card-a">
+        <pre><code><span class="kw">const</span> success =
+  buildSite({'{'}
+    design: <span class="str">'modern'</span>,
+    speed: <span class="str">'fast'</span>,
+    seo: <span class="str">'optimized'</span>
+  {'}'});</code></pre>
+      </div>
+      <div class="code-card code-card-b">
+        <pre><code><span class="kw">function</span> <span class="fn">growBusiness</span>() {'{'}
+  <span class="kw">return</span> results
+    .thatMatter();
+{'}'}</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    background: var(--bg);
+    overflow: hidden;
+    padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3.5rem, 8vw, 6rem);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pulse-dots circle {
+    animation: pulse 3.2s ease-in-out infinite;
+  }
+
+  .pulse-dots circle:nth-child(2) { animation-delay: 0.5s; }
+  .pulse-dots circle:nth-child(3) { animation-delay: 1s; }
+  .pulse-dots circle:nth-child(4) { animation-delay: 1.6s; }
+  .pulse-dots circle:nth-child(5) { animation-delay: 2.1s; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(2rem, 5vw, 3rem);
+    align-items: center;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--border-light);
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--blue-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .badge .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--blue-light);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    max-width: 14ch;
+  }
+
+  .grad {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .lede {
+    margin-top: 1.4rem;
+    max-width: 44ch;
+    font-size: 1.08rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.1rem;
+  }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.75rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .stars {
+    color: var(--star);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-code {
+    position: relative;
+    min-height: 320px;
+  }
+
+  .code-card {
+    position: absolute;
+    background: rgba(17, 24, 43, 0.85);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6);
+  }
+
+  .code-card pre {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    white-space: pre;
+  }
+
+  .kw { color: #c084fc; }
+  .str { color: #34d399; }
+  .fn { color: #60a5fa; }
+
+  .code-card-a {
+    top: 0;
+    right: 8%;
+    width: min(280px, 90%);
+  }
+
+  .code-card-b {
+    top: 46%;
+    right: 0;
+    width: min(230px, 80%);
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-code {
+      min-height: 260px;
+    }
+    .code-card-a {
+      right: auto;
+      left: 0;
+    }
+    .code-card-b {
+      right: auto;
+      left: 20%;
+    }
+  }
+</style>

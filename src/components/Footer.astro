@@ -1,0 +1,190 @@
+---
+const year = new Date().getFullYear();
+
+const columns = [
+  {
+    heading: 'Quick Links',
+    links: ['Home', 'Services', 'Portfolio', 'About', 'Blog', 'Contact']
+  },
+  {
+    heading: 'Services',
+    links: ['Custom Websites', 'AI Integrations', 'Website Performance', 'Custom Development', 'SEO & Optimization']
+  },
+  {
+    heading: 'Resources',
+    links: ['Blog', 'Case Studies', 'FAQ', 'Privacy Policy', 'Terms of Service']
+  }
+];
+---
+
+<footer id="contact" class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="logo">
+        <span class="logo-mark">JA</span>
+        <span class="logo-text">JASON ALLEN</span>
+      </a>
+      <p>Building websites and digital solutions that help businesses grow.</p>
+      <div class="social">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="GitHub">gh</a>
+        <a href="#" aria-label="Twitter / X">tw</a>
+        <a href="#" aria-label="Instagram">ig</a>
+      </div>
+    </div>
+
+    {columns.map((col) => (
+      <div class="footer-col">
+        <h4>{col.heading}</h4>
+        <ul>
+          {col.links.map((l) => (
+            <li><a href="#">{l}</a></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    <div class="footer-col">
+      <h4>Let&rsquo;s Work Together</h4>
+      <p class="work-together">I&rsquo;d love to hear about it.</p>
+      <ul class="contact-list">
+        <li>hello@jasonallen.us</li>
+        <li>(306) 381-5185</li>
+        <li>Scottsbluff, NE</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>&copy; {year} Jason Allen Web Solutions. All rights reserved.</span>
+    <span>Built with &hearts; and lots of &#9749;</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--bg-elevated);
+    border-top: 1px solid var(--border);
+    padding-block: clamp(3rem, 6vw, 4.5rem) 1.5rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background: var(--gradient);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
+
+  .logo-text {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+
+  .footer-brand p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    max-width: 30ch;
+  }
+
+  .social {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+  }
+
+  .social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .footer-col h4 {
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+
+  .footer-col ul {
+    list-style: none;
+    margin: 1.1rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .footer-col a {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .footer-col a:hover {
+    color: var(--text);
+  }
+
+  .work-together {
+    margin-top: 0.9rem;
+    font-size: 0.88rem;
+  }
+
+  .contact-list {
+    margin-top: 1rem !important;
+  }
+
+  .contact-list li {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
