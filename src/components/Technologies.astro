@@ -1,21 +1,20 @@
 ---
 const stack = [
-  { name: 'HTML5', label: 'HTML', color: '#e34f26' },
-  { name: 'CSS3', label: 'CSS', color: '#2965f1' },
-  { name: 'JavaScript', label: 'JS', color: '#f0db4f' },
-  { name: 'TypeScript', label: 'TS', color: '#3178c6' },
-  { name: 'PHP', label: 'PHP', color: '#777bb4' },
-  { name: 'Laravel', label: 'Lv', color: '#ff2d20' },
-  { name: 'WordPress', label: 'WP', color: '#8fb2c9' },
-  { name: 'React', label: 'Rx', color: '#61dafb' },
-  { name: 'Next.js', label: 'N', color: '#f5f7fb' },
-  { name: 'Tailwind CSS', label: 'Tw', color: '#38bdf8' },
-  { name: 'MySQL', label: 'Sq', color: '#4479a1' },
-  { name: 'Docker', label: 'Do', color: '#2496ed' },
-  { name: 'Cloudflare', label: 'Cf', color: '#f6821f' },
-  { name: 'GitHub', label: 'Gh', color: '#f5f7fb' },
-  { name: 'OpenAI', label: 'AI', color: '#10a37f' },
-  { name: 'Claude', label: 'Cl', color: '#d97757' }
+  { name: 'HTML5', slug: 'html5', color: 'E34F26' },
+  { name: 'CSS3', slug: 'css3', color: '1572B6' },
+  { name: 'JavaScript', slug: 'javascript', color: 'F7DF1E' },
+  { name: 'TypeScript', slug: 'typescript', color: '3178C6' },
+  { name: 'PHP', slug: 'php', color: '787CB5' },
+  { name: 'Laravel', slug: 'laravel', color: 'FF2D20' },
+  { name: 'WordPress', slug: 'wordpress', color: '8FB2C9' },
+  { name: 'React', slug: 'react', color: '61DAFB' },
+  { name: 'Next.js', slug: 'nextdotjs', color: 'FFFFFF' },
+  { name: 'Tailwind CSS', slug: 'tailwindcss', color: '38BDF8' },
+  { name: 'MySQL', slug: 'mysql', color: '4479A1' },
+  { name: 'Docker', slug: 'docker', color: '2496ED' },
+  { name: 'Cloudflare', slug: 'cloudflare', color: 'F38020' },
+  { name: 'GitHub', slug: 'github', color: 'FFFFFF' },
+  { name: 'OpenAI', slug: 'openai', color: 'FFFFFF' }
 ];
 ---
 
@@ -28,10 +27,20 @@ const stack = [
     <ul class="tech-grid">
       {stack.map((t) => (
         <li>
-          <span class="tech-icon" style={`--tc:${t.color}`}>{t.label}</span>
+          <span class="tech-icon">
+            <img src={`https://cdn.simpleicons.org/${t.slug}/${t.color}`} alt={t.name} loading="lazy" />
+          </span>
           <span class="tech-name">{t.name}</span>
         </li>
       ))}
+      <li>
+        <span class="tech-icon">
+          <svg viewBox="0 0 24 24" fill="#d97757">
+            <path d="M12 2l1.4 6.6L20 10l-6.6 1.4L12 18l-1.4-6.6L4 10l6.6-1.4L12 2z" />
+          </svg>
+        </span>
+        <span class="tech-name">Claude</span>
+      </li>
     </ul>
   </div>
 </section>
@@ -52,8 +61,8 @@ const stack = [
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 1.1rem;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 0.6rem;
   }
 
   .tech-grid li {
@@ -67,21 +76,24 @@ const stack = [
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 46px;
-    height: 46px;
-    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
     background: var(--bg-card);
     border: 1px solid var(--border-light);
-    color: var(--tc);
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.78rem;
+  }
+
+  .tech-icon img,
+  .tech-icon svg {
+    width: 19px;
+    height: 19px;
   }
 
   .tech-name {
-    font-size: 0.68rem;
+    font-size: 0.6rem;
     color: var(--text-dim);
     text-align: center;
+    line-height: 1.2;
   }
 
   @media (max-width: 900px) {
